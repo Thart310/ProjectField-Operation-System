@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Field Operation Systems</title>
+        <title>Field Operation System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -88,8 +88,6 @@
 
                 <div class="links">
                     <a href="{{URL::to('/login')}}">  <img src="http://www.sapphire.co.th/images/logo.png"></a>
-                  
-                    
                 </div>
             </div>
         </div>

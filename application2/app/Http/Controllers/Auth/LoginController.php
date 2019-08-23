@@ -22,6 +22,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
     /**
      * Create a new controller instance.
      *
@@ -37,6 +38,7 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+    
     protected function credentials(Request $request)
     {
         $field = $this->field($request);
@@ -70,5 +72,14 @@ class LoginController extends Controller
             $this->username() => "required|exists:users,{$field}",
             'password' => 'required',
         ], $messages);
+    }
+    /*investigate login admin&user */
+    protected function redirectTo()
+    {
+        if(auth()->user()->isAdmin()) {
+            return '/admin/dashboard';
+        } else {
+            return '/home';
+        }
     }
 }

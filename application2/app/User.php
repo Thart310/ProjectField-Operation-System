@@ -34,7 +34,14 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+    
+    const ADMIN_TYPE = 1;
+    const DEFAULT_TYPE = 0;
+    
+    public function isAdmin(){
+        return $this->type === self::ADMIN_TYPE;
+    }
 }

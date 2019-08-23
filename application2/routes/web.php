@@ -15,5 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes(['verify' => true]);
+
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+//Route for normal user
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index');
+});
+// //Route for admin
+Route::group(['prefix' => 'admin'], function(){
+    Route::group(['middleware' => ['admin']], function(){
+        Route::get('/dashboard', 'admin\AdminController@index');
+    });
+});
