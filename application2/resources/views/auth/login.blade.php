@@ -61,7 +61,21 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif 
+                            </div>
+                            <div class="container">
+                            <br>
+                            <hr>
+                        <font color="red"> 
+                            <p>* หมายเหตุ *</p> 
+                        </font>
+                        <font color="#ooooFF"> 
+                            <p>หากท่าน Login ครั้งแรกให้ท่านใช้ Username และ Password ที่เราเตรียมให้</p>
+                            <p>Username = ของท่าน  & Password = sapphire</p>  
+                        </font>
+                        <font color="red"> 
+                            <p>* หากท่านต้องการเปลี่ยนรหัสให้ทำการรีเซ็ตรหัสโดยใช้อีเมล์ของท่าน *</p>
+                        </font>
                             </div>
                         </div>
                     </form>
@@ -70,4 +84,5 @@
         </div>
     </div>
 </div>
+
 @endsection

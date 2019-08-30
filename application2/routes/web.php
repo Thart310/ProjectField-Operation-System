@@ -15,15 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/trip','TripController@index');
 
 Auth::routes(['verify' => true]);
-
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 //Route for normal user
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
+    Route::get('/home','TripController@index');
 });
 // //Route for admin
 Route::group(['prefix' => 'admin'], function(){
@@ -31,3 +32,4 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/dashboard', 'admin\AdminController@index');
     });
 });
+
